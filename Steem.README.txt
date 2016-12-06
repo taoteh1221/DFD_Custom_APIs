@@ -1,0 +1,9 @@
+
+
+To allow DFD_Custom_APIs to connect to the STEEM cli_wallet:
+
+==========================================================================
+./cli_wallet --rpc-http-allowip="YOUR_PHP_WEB_SERVER_IP_ADDRESS" --rpc-http-endpoint="STEEM_NODE_IP_ADDRESS:PORT_NUMBER"
+==========================================================================
+
+Remember to open any required ports on your STEEM node, which a firewall may be blocking by default.

@@ -1,6 +1,5 @@
 <?php
 
-require_once 'lib/classes/base.api.class.php';
 
 /*
  * Based off http://coreymaynard.com/blog/creating-a-restful-api-with-php/
@@ -11,6 +10,8 @@ class custom_api extends base_api
 
     public function __construct($request, $origin) {
         parent::__construct($request);
+        
+        //var_dump($this->request);
         
         $user_auth = new user_auth();
         
@@ -29,6 +30,13 @@ class custom_api extends base_api
      protected function example() {
         return "Steem API endpoint test";
      }
+     
+     // Get a username's account data !!!!!!!!!"GET" METHOD CURRENTLY CAUSES ISSUES, AVOID FOR NOW!!!!!!!!!!!
+     protected function account() {
+        global $allowed_apis;
+        return json_send_data( $allowed_apis['steem'], 'POST', 'get_account', array($this->request['username']), 1 );
+     }
+     
  }
  
  ?>

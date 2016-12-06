@@ -1,7 +1,5 @@
 <?php
 
-require_once 'lib/classes/base.api.class.php';
-
 /*
  * Based off http://coreymaynard.com/blog/creating-a-restful-api-with-php/
  */

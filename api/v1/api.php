@@ -9,7 +9,7 @@ if (!array_key_exists('HTTP_ORIGIN', $_SERVER)) {
 
 try {
     
-    if ( in_array($_REQUEST['custom_api'], $allowed_apis) ) {
+    if ( array_key_exists($_REQUEST['custom_api'], $allowed_apis) ) {
     require_once 'lib/classes/custom-api/'.$_REQUEST['custom_api'].'.api.class.php';
     }
     else {

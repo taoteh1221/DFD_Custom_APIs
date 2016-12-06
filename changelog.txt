@@ -3,3 +3,12 @@
 0.1.0:
 Initial version
 -------------------------------------------------------------------
+
+-------------------------------------------------------------------
+0.1.1:
+-Modularized client / server scripts into their own primary subdirectories
+-Added generic endpoint request functionality
+-Added first functional STEEM blockchain endpoint for account data retrieval
+-Added additional global variables to config.php
+-Minor cleanups / optimizations
+-------------------------------------------------------------------

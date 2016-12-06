@@ -1,21 +1,6 @@
 <?php
 
 
-// Data array sent to API
-$data = array(
-                'api_key' => 'API_KEY_HERE',
-                'custom_api' => 'steem',
-                'test_data' => 'test 123'
-            );
-
-
-// API call tests
-//echo call_api('GET', "http://gigabyte1900.dragonfrugal.network/api/v1/api.php?request=example", $data);
-echo call_api('POST', "http://gigabyte1900.dragonfrugal.network/api/v1/api.php?request=example", $data);
-//echo call_api('PUT', "http://gigabyte1900.dragonfrugal.network/api/v1/api.php?request=example", $data);
-//echo call_api('DELETE', "http://gigabyte1900.dragonfrugal.network/api/v1/api.php?request=example", $data);
-
-
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 // Method: POST, PUT, GET, DELETE
@@ -51,14 +36,6 @@ function call_api($method, $url, $data = false) {
                 $url = sprintf("%s?%s", $url, http_build_query($data));
     }
 
-    // Optional Authentication:
-    //curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    //curl_setopt($curl, CURLOPT_USERPWD, "username:password");
-    
-    // Verify SSL certificates
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 1);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
-    
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
