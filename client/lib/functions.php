@@ -9,7 +9,9 @@
 // http://stackoverflow.com/questions/9802788/call-a-rest-api-in-php
 
 function call_api($method, $url, $data = false) {
-    
+
+global $verify_connection;
+
     $curl = curl_init();
 
     switch ($method) {
@@ -35,6 +37,9 @@ function call_api($method, $url, $data = false) {
             if ($data)
                 $url = sprintf("%s?%s", $url, http_build_query($data));
     }
+    
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, $verify_connection);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, $verify_connection);
 
     curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);

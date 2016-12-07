@@ -11,14 +11,12 @@ class custom_api extends base_api
     public function __construct($request, $origin) {
         parent::__construct($request);
         
-        //var_dump($this->request);
-        
         $user_auth = new user_auth();
         
         if (!array_key_exists('api_key', $this->request)) {
             throw new Exception('No API Key provided');
         }
-        else if ( !in_array( $this->request['api_key'], $user_auth->keys_array() ) ) {
+        else if ( $user_auth->check_key($this->request['api_key']) == false ) {
             throw new Exception('Invalid API Key: ' . $this->request['api_key']);
         }
 
@@ -28,7 +26,7 @@ class custom_api extends base_api
      * Example of an Endpoint
      */
      protected function example() {
-        return "Steem API endpoint test";
+        return "STEEM API endpoint test";
      }
      
      // Get a username's account data !!!!!!!!!"GET" METHOD CURRENTLY CAUSES ISSUES, AVOID FOR NOW!!!!!!!!!!!

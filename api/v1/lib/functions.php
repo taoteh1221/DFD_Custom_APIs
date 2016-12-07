@@ -3,7 +3,9 @@
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 function json_send_data($server, $method, $request, $params=false, $json_parsed_array=false) {
-    
+
+global $verify_connection;
+
 $data = array(
                 "jsonrpc" => "2.0",
                 "method" => $request,
@@ -20,6 +22,8 @@ curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS,$json_post);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, $verify_connection);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, $verify_connection);
 
 $result = curl_exec($ch);
 curl_close($ch);

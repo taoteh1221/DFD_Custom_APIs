@@ -7,8 +7,18 @@ Initial version
 -------------------------------------------------------------------
 0.1.1:
 -Modularized client / server scripts into their own primary subdirectories
--Added generic endpoint request functionality
--Added first functional STEEM blockchain endpoint for account data retrieval
--Added additional global variables to config.php
+-Generic endpoint request functionality
+-First functional STEEM blockchain endpoint for account data retrieval
+-Additional global variables in config.php
 -Minor cleanups / optimizations
 -------------------------------------------------------------------
+
+-------------------------------------------------------------------
+0.1.2:
+-Feature / config for enabling and disabling SSL check and peer check on requests
+-Basic optimization / security / scalability enhancements for the API key system
+-System / config checks with warnings to end users
+-Updated Steem API README
+-Updated main README
+-------------------------------------------------------------------
+

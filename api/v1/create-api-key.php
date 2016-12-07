@@ -15,7 +15,7 @@ margin: 55px;
 
 <form action='' method='post'>
 
-<p>API Key Creation Password (in config.php): <input type='text' name='key_password' /></p>
+<p>API Key Creation Password (in config.php): <input type='text' name='key_password' value='' /></p>
 
 <p><input type='submit' value='Request API Key' /></p>
 
